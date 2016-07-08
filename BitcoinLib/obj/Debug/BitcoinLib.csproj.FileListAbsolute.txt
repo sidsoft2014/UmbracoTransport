@@ -1,0 +1,7 @@
+H:\Coding\Projects\ASP\UmbTran\BitcoinLib\bin\Debug\BitcoinLib.dll
+H:\Coding\Projects\ASP\UmbTran\BitcoinLib\bin\Debug\BitcoinLib.pdb
+H:\Coding\Projects\ASP\UmbTran\BitcoinLib\bin\Debug\Newtonsoft.Json.dll
+H:\Coding\Projects\ASP\UmbTran\BitcoinLib\bin\Debug\Newtonsoft.Json.xml
+H:\Coding\Projects\ASP\UmbTran\BitcoinLib\obj\Debug\BitcoinLib.csprojResolveAssemblyReference.cache
+H:\Coding\Projects\ASP\UmbTran\BitcoinLib\obj\Debug\BitcoinLib.dll
+H:\Coding\Projects\ASP\UmbTran\BitcoinLib\obj\Debug\BitcoinLib.pdb
