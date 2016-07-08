@@ -24,8 +24,11 @@ namespace BitcoinLib.Exchanges
             {
                 try
                 {
+                    // Get data from the API.
+                    // Usualy I would use DownloadStringTaskAsync, to prevent UI blocking, but MVC kicks off when I try this.
                     var json = wc.DownloadString(url);
-                    // When the API we are getting the JSON from changes it's format this will break.
+
+                    // When the API we are getting the JSON from changes it's format this WILL break.
                     // When this happens check the JSON data to see what fields have been added, removed, changed name or had data type altered and then adjust the Ticker object to match.
                     // If this is not the fix then the overall structure of the response must have changed. In this case, as well as the above, check the overall structure of the string.
                     // (i.e. Is it still a Key-Value pair? Is the Key still a string? etc...)

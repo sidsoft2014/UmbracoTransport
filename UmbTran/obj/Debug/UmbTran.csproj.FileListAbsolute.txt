@@ -129,3 +129,5 @@ H:\Coding\Projects\ASP\UmbTran\UmbTran\bin\UmbracoExamine.xml
 H:\Coding\Projects\ASP\UmbTran\UmbTran\obj\Debug\UmbTran.csprojResolveAssemblyReference.cache
 H:\Coding\Projects\ASP\UmbTran\UmbTran\obj\Debug\UmbTran.dll
 H:\Coding\Projects\ASP\UmbTran\UmbTran\obj\Debug\UmbTran.pdb
+H:\Coding\Projects\ASP\UmbTran\UmbTran\bin\BitcoinLib.dll
+H:\Coding\Projects\ASP\UmbTran\UmbTran\bin\BitcoinLib.pdb
