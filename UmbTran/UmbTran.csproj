@@ -334,13 +334,16 @@
     </Content>
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="sitefiles\main.css" />
-    <Content Include="sitefiles\main.js" />
     <Content Include="sitefiles\vendor\scripts\angular-route.js" />
     <Content Include="sitefiles\vendor\scripts\angular-sanitize.min.js" />
     <Content Include="sitefiles\vendor\scripts\angular.min.js" />
     <Content Include="sitefiles\vendor\scripts\bootstrap.min.js" />
     <Content Include="sitefiles\vendor\scripts\jquery-2.1.4.min.js" />
     <Content Include="sitefiles\vendor\styles\bootstrap.css" />
+    <Content Include="src\scripts\ng\controllers\chartController.js" />
+    <Content Include="src\scripts\ng\directives\ngChart.js" />
+    <Content Include="src\scripts\ng\modules\ngMain.js" />
+    <Content Include="src\scripts\ng\services\httpService.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
