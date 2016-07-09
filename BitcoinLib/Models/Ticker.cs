@@ -1,13 +1,15 @@
 using Newtonsoft.Json;
+using System;
 
 namespace BitcoinLib.Models
 {
+    [Serializable]
     public class Ticker
     {
         /*
             Example Data:
-            "last":"0.0251","lowestAsk":"0.02589999","highestBid":"0.0251","percentChange":"0.02390438",
-            "baseVolume":"6.16485315","quoteVolume":"245.82513926"
+            {"last":"0.0251","lowestAsk":"0.02589999","highestBid":"0.0251","percentChange":"0.02390438",
+            "baseVolume":"6.16485315","quoteVolume":"245.82513926"}
         */
 
         [JsonProperty("last")]

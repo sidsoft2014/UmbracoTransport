@@ -333,6 +333,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="sitefiles\main.css" />
+    <Content Include="sitefiles\main.js" />
+    <Content Include="sitefiles\vendor\scripts\angular-route.js" />
+    <Content Include="sitefiles\vendor\scripts\angular-sanitize.min.js" />
+    <Content Include="sitefiles\vendor\scripts\angular.min.js" />
+    <Content Include="sitefiles\vendor\scripts\bootstrap.min.js" />
+    <Content Include="sitefiles\vendor\scripts\jquery-2.1.4.min.js" />
+    <Content Include="sitefiles\vendor\styles\bootstrap.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
@@ -367,6 +375,9 @@
     <Content Include="Views\Landing.cshtml" />
     <Content Include="Views\Master.cshtml" />
     <Content Include="src\styles\sass\elements\_nav.scss" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="src\styles\sass\elements\_tickers.scss" />
+    <Content Include="Views\Partials\_tickerPanel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -403,12 +414,6 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="src\scripts\js\main.js" />
-    <Content Include="src\styles\sass\main.css">
-      <DependentUpon>main.scss</DependentUpon>
-    </Content>
-    <Content Include="src\styles\sass\main.min.css">
-      <DependentUpon>main.css</DependentUpon>
-    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

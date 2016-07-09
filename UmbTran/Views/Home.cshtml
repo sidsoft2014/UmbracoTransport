@@ -1,11 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = null;    
+    Layout = null;
 }
 <!DOCTYPE HTML>
 <html lang="en-gb">
 <head>
-    <title>Some title</title>
     <link href="~/sitefiles/vendor/styles/bootstrap.css" rel="stylesheet" />
     <link href="~/sitefiles/main.css" rel="stylesheet" />
     <script src="~/sitefiles/vendor/scripts/jquery-2.1.4.min.js"></script>
@@ -13,14 +13,13 @@
     <script src="~/sitefiles/main.js"></script>
 </head>
 <body>
-    <header class="js-header header">
-
-    </header>
-    <div class="js-body body">
-        @RenderBody()
+    <div class="row">
+        <div class="col-sm-12 col-md-3">
+            @Html.Partial("_tickerPanel")
+        </div>
+        <div class="col-sm-12 col-md-9">
+            <h3>Center Panel</h3>
+        </div>
     </div>
-    <footer class="js-footer footer">
-
-    </footer>
 </body>
 </html>

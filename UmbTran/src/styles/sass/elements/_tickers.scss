@@ -1,0 +1,23 @@
+﻿.ticker {
+
+    &-panel {
+        background-color: #aaa;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 5px;
+        text-align: center;
+        width: 100%;
+    }
+
+    &-item {
+        display: block;
+        border: 1px solid #000;
+        border-radius: 5px;
+        height: 64px;
+        width: 100%;
+        cursor: pointer;
+        margin: 3px 0px;
+        background-color: rgba(49, 112, 143, 1);
+        color: #fff;
+    }
+}

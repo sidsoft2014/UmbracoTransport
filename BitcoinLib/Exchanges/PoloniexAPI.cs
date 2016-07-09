@@ -9,17 +9,18 @@ using BitcoinLib.Models;
 
 namespace BitcoinLib.Exchanges
 {
-    class PoloniexAPI
+    public class PoloniexAPI
     {
         private const string _baseUrl = @" https://poloniex.com/public";
         private readonly Dictionary<string, string> _commands = new Dictionary<string, string>
         {
-            {"tickers", "returnTicker" }
+            {"tickers", "returnTicker" },
+            {"orderBook", "returnOrderBook&currencyPair={0}&depth=10" }
         };
 
         public Dictionary<string, Ticker> GetTickers()
         {
-            var url = $"{_baseUrl}+?command=returnTicker";
+            var url = $"{_baseUrl}?command=returnTicker";
             using(var wc = new WebClient())
             {
                 try
@@ -35,11 +36,13 @@ namespace BitcoinLib.Exchanges
                     var tickers = JsonConvert.DeserializeObject<Dictionary<string, Ticker>>(json);
                     return tickers;
                 }
-                catch
+                catch (Exception ex)
                 {
                     return null;
                 }
             }
         }
+
+        public 
     }
 }

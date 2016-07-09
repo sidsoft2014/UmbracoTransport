@@ -1,0 +1,26 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var tickers = Cache["tickers"] as Dictionary<string, BitcoinLib.Models.Ticker>;
+    if (tickers == null)
+    {
+        var api = new BitcoinLib.Exchanges.PoloniexAPI();
+        tickers = api.GetTickers();
+        Cache.Insert("tickers", tickers, null, DateTime.Now.AddMinutes(5), System.Web.Caching.Cache.NoSlidingExpiration);
+    }
+}
+<div class="js-ticker-panel ticker-panel">
+    @if (tickers != null)
+    {
+        foreach (var ticker in tickers)
+        {
+            <div class="ticker-item">
+                <h4>@ticker.Key</h4>
+                <h5>@ticker.Value.LastPrice</h5>
+            </div>
+        }
+    }
+    else
+    {
+        <h3>Could not get ticker data.</h3>
+    }
+</div>
