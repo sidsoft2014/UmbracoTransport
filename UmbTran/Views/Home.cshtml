@@ -10,15 +10,18 @@
     <link href="~/sitefiles/main.css" rel="stylesheet" />
     <script src="~/sitefiles/vendor/scripts/jquery-2.1.4.min.js"></script>
     <script src="~/sitefiles/vendor/scripts/bootstrap.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
     <script src="~/sitefiles/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>*@
 </head>
 <body>
     <div class="row" ng-controller="chartController as vm">
         <div class="col-sm-12 col-md-3">
             @Html.Partial("_tickerPanel")
         </div>
-        <div class="col-sm-12 col-md-9">
+        <div class="js-chart-container chart-container col-sm-12 col-md-9">
             <h4>Closing prices: {{vm.marketName}}</h4>
             <div id="js-chart-panel" class="js-chart-panel chart-panel"></div>
         </div>

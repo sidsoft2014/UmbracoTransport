@@ -26,7 +26,7 @@
         httpService.getJson(url)
           .then(function (response) {
             vm.dataset = response;
-            buildChart(vm);
+            buildChart(vm.dataset);
           });
       }
 
