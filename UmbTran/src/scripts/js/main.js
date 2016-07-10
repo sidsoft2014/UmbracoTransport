@@ -1,3 +1,7 @@
+function precise(id) {
+    document.getElementById(id).value = Number(document.getElementById(id).value).toFixed(8);
+  };
+
 function buildChart(dataset) {
     var panel = document.getElementsByClassName('js-chart-panel')[0];
     panel.innerHTML = "";

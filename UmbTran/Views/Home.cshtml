@@ -17,13 +17,31 @@
     @*<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>*@
 </head>
 <body>
-    <div class="row" ng-controller="chartController as vm">
-        <div class="col-sm-12 col-md-3">
+    <div class="wrapper-main row" ng-controller="chartController as vm">
+        <div class="wrapper-left col-sm-12 col-md-3">
             @Html.Partial("_tickerPanel")
         </div>
-        <div class="js-chart-container chart-container col-sm-12 col-md-9">
-            <h4>Closing prices: {{vm.marketName}}</h4>
-            <div id="js-chart-panel" class="js-chart-panel chart-panel"></div>
+        <div class="wrapper-center col-sm-12 col-md-9">
+            <div class="js-chart-container chart-container" id="chart-container">
+                <h4>Closing prices: {{vm.marketName}}</h4>
+                <div id="js-chart-panel" class="js-chart-panel chart-panel"></div>
+            </div>
+            <div class="js-bid-panel bid-panel">
+                <form >
+                    <label class="bid-panel-label" for="inpBidPrice">Price</label>
+                    <input class="bid-panel-input" type="number" min="0.00000000" step="0.00000001" id="inpBidPrice" value="0.00000000" oninput='precise("inpBidPrice")'/>
+                    <hr/>
+                    <label class="bid-panel-label" for="inpBidQuant">Quantity</label>
+                    <input class="bid-panel-input" type="number" min="0.00000000" step="0.00000001" id="inpBidQuant" value="0.00000000" oninput='precise("inpBidQuant")'/>
+                    <hr/>
+                    <label class="bid-panel-label" for="bidFee">Fee</label>
+                    <h5 class="js-bid-fee" id="bidFee">0.00000000</h5>
+                    <label class="bid-panel-label" for="bidTotal">Total</label>
+                    <h5 class="js-bid-total" id="bidTotal">0.00000000</h5>
+                    <hr/>
+                    <input type="submit" value="Buy"/>
+                </form>
+            </div>
         </div>
     </div>
     <script src="~/sitefiles/vendor/scripts/angular.min.js"></script>

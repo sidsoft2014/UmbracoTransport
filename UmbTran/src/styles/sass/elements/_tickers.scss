@@ -1,6 +1,6 @@
 ﻿.ticker {
 
-    &-panel {
+  &-panel {
         background-color: #aaa;
         border: 1px solid #ccc;
         border-radius: 10px;
@@ -11,7 +11,7 @@
         height: 278px;
 
         @media only screen and (min-width: 768px){
-          height: 640px;
+          height: 100%;
         }
     }
 
@@ -25,5 +25,10 @@
         margin: 3px 0px;
         background-color: rgba(49, 112, 143, 1);
         color: #fff;
+
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
     }
 }
