@@ -20,8 +20,9 @@ namespace BitcoinLib.Exchanges
 
         public Dictionary<string, Ticker> GetTickers()
         {
-            var url = $"{_baseUrl}?command=returnTicker";
-            using(var wc = new WebClient())
+            var url = $"{_baseUrl}?command={_commands["tickers"]}";
+            var result = new Dictionary<string, Ticker>();
+            using (var wc = new WebClient())
             {
                 try
                 {
@@ -33,15 +34,23 @@ namespace BitcoinLib.Exchanges
                     // When this happens check the JSON data to see what fields have been added, removed, changed name or had data type altered and then adjust the Ticker object to match.
                     // If this is not the fix then the overall structure of the response must have changed. In this case, as well as the above, check the overall structure of the string.
                     // (i.e. Is it still a Key-Value pair? Is the Key still a string? etc...)
-                    var tickers = JsonConvert.DeserializeObject<Dictionary<string, Ticker>>(json);
-                    return tickers;
+                    var tickers = JsonConvert.DeserializeObject<Dictionary<string, Ticker>>(json).GroupBy(p => p.Key.Split('_')[0]);
+                    foreach (var group in tickers)
+                    {
+                        var oGroup = group.OrderBy(p => p.Key);
+                        foreach (var item in oGroup)
+                        {
+                            result.Add(item.Key, item.Value);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
                     return null;
                 }
             }
+            return result;
         }
-        
+
     }
 }

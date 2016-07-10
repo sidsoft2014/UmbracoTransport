@@ -1,0 +1,8 @@
+<div class="js-ticker-panel ticker-panel">
+    <div class="ticker-item" ng-repeat="ticker in vm.tickers" ng-click="vm.setMarket(ticker)">
+        <a href="#chart-container">
+            <h4>@ticker.Key</h4>
+            <h5>@ticker.Value.LastPrice</h5>
+        </a>
+    </div>
+</div>

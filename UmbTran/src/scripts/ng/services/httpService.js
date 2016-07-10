@@ -1,24 +1,26 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
     angular.module('ngMain')
-      .service('httpService', httpService);
+      .factory('httpService', httpService);
 
-      httpService.$inject = ['$http'];
+    httpService.$inject = ['$http'];
 
-      function httpService($http){
+    function httpService($http) {
 
         var service = {
-          getJson: getJson
+            getPublicJson: getPublicJson,
+            urlBasePublic: 'https://poloniex.com/public?command='
         };
 
         return service;
 
-        function getJson(url) {
-          return $http.get(url)
-            .then(function(response){
-              return response.data;
-            });
+        function getPublicJson(url) {
+            url = service.urlBasePublic + url;
+            return $http.get(url)
+              .then(function (response) {
+                  return response.data;
+              });
         }
-      }
+    }
 }());
