@@ -1,7 +1,7 @@
 function buildChart(vm) {
     var ctx = document.createElement('canvas');
     ctx.id = "canv-chart";
-    ctx.className = "js-chart";
+    ctx.className = "js-chart chart-canvas";
 
     var panel = document.getElementsByClassName('js-chart-panel')[0];
     panel.innerHTML = "";

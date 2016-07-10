@@ -35,7 +35,8 @@ gulp.task('sass:serve', function () {
     return gulp.src(paths.sass.src)
         .pipe(sass())
         .pipe(cssnano())
-        .pipe(gulp.dest(paths.sass.dest));
+        .pipe(gulp.dest(paths.sass.dest))
+        .pipe(browserSync.stream());
 });
 /* END SASS TASKS */
 
@@ -56,9 +57,19 @@ gulp.task('js:prod', function () {
 gulp.task('js:serve', function () {
     return gulp.src(paths.js.src)
         .pipe(uglify())
-        .pipe(gulp.dest(paths.js.dest));
+        .pipe(gulp.dest(paths.js.dest))
+        .pipe(browserSync.stream());
 });
 /* END JS TASKS */
+
+gulp.task('serve', ['sass:serve', 'js:serve'], function () {
+    browserSync.init({
+        proxy: "http://localhost:50434"
+    });
+
+    gulp.watch(paths.sass.src, ['sass:serve']);
+    gulp.watch(paths.js.src, ['js:serve']);
+})
 
 gulp.task('watch', ['sass:dev', 'js:dev'], function () {
     gulp.watch(paths.sass.src, ['sass:dev']);

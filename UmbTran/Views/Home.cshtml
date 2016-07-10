@@ -19,7 +19,8 @@
             @Html.Partial("_tickerPanel")
         </div>
         <div class="col-sm-12 col-md-9">
-            <div class="js-chart-panel chart-panel"></div>
+            <h4>Closing prices: {{vm.marketName}}</h4>
+            <div id="js-chart-panel" class="js-chart-panel chart-panel"></div>
         </div>
     </div>
     <script src="~/sitefiles/vendor/scripts/angular.min.js"></script>
