@@ -5,9 +5,9 @@
         .module('ngMain')
         .directive('ngTickerPanel', ngTickerPanel);
 
-    ngTickerPanel.$inject = ['$window', 'httpService'];
+    ngTickerPanel.$inject = ['$window', 'httpService', 'chartService'];
 
-    function ngTickerPanel($window, httpService) {
+    function ngTickerPanel($window, httpService, chartService) {
         var directive = {
             restrict: 'E',
             transclude: true,
@@ -17,7 +17,6 @@
             },
             controller: function ($scope) {
                 $scope.tickers = [];
-                $scope.market = undefined;
 
                 httpService.getPublicJson('returnTicker')
                 .then(function (response) {
@@ -33,8 +32,8 @@
                     }
                 });
 
-                $scope.setMarket = function (idx) {
-                    $scope.market = $cope.tickers[idx];
+                $scope.setMarket = function (market) {
+                    chartService.initialise(market.name);
                 };
             },
             templateUrl: './src/scripts/ng/partials/tickerpanel.html'

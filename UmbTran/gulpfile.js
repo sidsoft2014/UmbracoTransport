@@ -5,8 +5,8 @@
     del = require('del'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify')
-inject = require('gulp-inject'),
-angularFilesort = require('gulp-angular-filesort');
+    inject = require('gulp-inject'),
+    angularFilesort = require('gulp-angular-filesort');
 
 var paths = {
     sass: {
