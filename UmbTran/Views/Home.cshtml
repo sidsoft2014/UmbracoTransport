@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = null;
@@ -19,7 +19,7 @@
 <body>
     <div class="wrapper-main row" ng-controller="chartController as vm">
         <div class="wrapper-left col-sm-12 col-md-3">
-            @Html.Partial("_tickerPanel")
+            <ng-ticker-panel></ng-ticker-panel>
         </div>
         <div class="wrapper-center col-sm-12 col-md-9">
             <div class="js-chart-container chart-container" id="chart-container">
@@ -47,9 +47,13 @@
     <script src="~/sitefiles/vendor/scripts/angular.min.js"></script>
     <script src="~/sitefiles/vendor/scripts/angular-route.js"></script>
     <script src="~/sitefiles/vendor/scripts/angular-sanitize.min.js"></script>
-    <script src="~/src/scripts/ng/modules/ngMain.js"></script>
-    <script src="~/src/scripts/ng/services/httpService.js"></script>
-    <script src="~/src/scripts/ng/directives/ngChart.js"></script>
-    <script src="~/src/scripts/ng/controllers/chartController.js"></script>
+    <!--inject:js -->
+    <script src="../src/scripts/ng/modules/ngMain.js"></script>
+    <script src="../src/scripts/ng/services/httpService.js"></script>
+    <script src="../src/scripts/ng/directives/ngTickerPanel.js"></script>
+    <script src="../src/scripts/ng/directives/ngChart.js"></script>
+    <script src="../src/scripts/ng/controllers/tickerController.js"></script>
+    <script src="../src/scripts/ng/controllers/chartController.js"></script>
+    <!-- endinject-->
 </body>
 </html>

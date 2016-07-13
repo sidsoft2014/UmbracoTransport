@@ -341,7 +341,9 @@
     <Content Include="sitefiles\vendor\scripts\jquery-2.1.4.min.js" />
     <Content Include="sitefiles\vendor\styles\bootstrap.css" />
     <Content Include="src\scripts\ng\controllers\chartController.js" />
+    <Content Include="src\scripts\ng\controllers\tickerController.js" />
     <Content Include="src\scripts\ng\directives\ngChart.js" />
+    <Content Include="src\scripts\ng\directives\ngTickerPanel.js" />
     <Content Include="src\scripts\ng\modules\ngMain.js" />
     <Content Include="src\scripts\ng\partials\tickerpanel.html" />
     <Content Include="src\scripts\ng\services\httpService.js" />

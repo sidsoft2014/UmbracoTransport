@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
 	Layout = null;    
 }
@@ -22,5 +22,13 @@
     <footer class="js-footer footer">
 
     </footer>
+    <!--inject:js -->
+    <script src="../src/scripts/ng/modules/ngMain.js"></script>
+    <script src="../src/scripts/ng/services/httpService.js"></script>
+    <script src="../src/scripts/ng/directives/ngTickerPanel.js"></script>
+    <script src="../src/scripts/ng/directives/ngChart.js"></script>
+    <script src="../src/scripts/ng/controllers/tickerController.js"></script>
+    <script src="../src/scripts/ng/controllers/chartController.js"></script>
+    <!-- endinject-->
 </body>
 </html>

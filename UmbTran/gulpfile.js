@@ -4,7 +4,9 @@
     cssnano = require('gulp-cssnano'),
     del = require('del'),
     sass = require('gulp-sass'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify')
+inject = require('gulp-inject'),
+angularFilesort = require('gulp-angular-filesort');
 
 var paths = {
     sass: {
@@ -14,6 +16,10 @@ var paths = {
     js: {
         src: "./src/scripts/js/**/*.js",
         dest: "./sitefiles"
+    },
+    angularPages: {
+        src: './src/scripts/ng/**/*.js',
+        dest: './Views/*.cshtml'
     }
 }
 
@@ -62,13 +68,35 @@ gulp.task('js:serve', function () {
 });
 /* END JS TASKS */
 
-gulp.task('serve', ['sass:serve', 'js:serve'], function () {
+/* INJECT TASKS */
+gulp.task('inject', function () {
+    gulp.src(paths.angularPages.dest)
+    .pipe(inject(
+      gulp.src(paths.angularPages.src)
+        .pipe(angularFilesort()), { relative: true }
+      ))
+    .pipe(gulp.dest('./Views'));
+});
+gulp.task('inject:serve', function () {
+    gulp.src(paths.angularPages.dest)
+    .pipe(inject(
+      gulp.src(paths.angularPages.src)
+        .pipe(angularFilesort()), { relative: true }
+      ))
+    .pipe(gulp.dest('./Views'))
+        .pipe(browserSync.stream());
+});
+/* END INJECT TASKS */
+
+
+gulp.task('serve', ['sass:serve', 'js:serve', 'inject:serve'], function () {
     browserSync.init({
-        proxy: "http://localhost:50434"
+        proxy: "http://localhost:180"
     });
 
     gulp.watch(paths.sass.src, ['sass:serve']);
     gulp.watch(paths.js.src, ['js:serve']);
+    gulp.watch(paths.angularPages.src, ['inject:serve']);
 })
 
 gulp.task('watch', ['sass:dev', 'js:dev'], function () {
